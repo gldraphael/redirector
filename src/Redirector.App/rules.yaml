@@ -1,0 +1,3 @@
+rules:
+  - slug: gh
+    redirectTo: https://github.com
