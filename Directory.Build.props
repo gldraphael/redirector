@@ -8,10 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <AssemblyAttribute Include="System.CLSCompliant">
-      <_Parameter1>false</_Parameter1>
-      <_Parameter1_IsLiteral>true</_Parameter1_IsLiteral>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>$(MSBuildProjectName).Tests</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
-  
+
 </Project>

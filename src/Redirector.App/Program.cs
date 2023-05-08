@@ -17,8 +17,15 @@ if(sources?.FileConfig is not null)
         builder.Configuration.AddYamlFile(fileConfig);
     }
 }
+builder.Configuration.AddJsonFile("./appsettings.json", optional: false);
+builder.Configuration.AddJsonFile($"./appsettings.{builder.Environment.EnvironmentName}.json");
+builder.Configuration.AddEnvironmentVariables();
 
 var app = builder.Build();
 app.MapRedirectRoutes();
 app.MapFallback(() => "Hello!");
 await app.RunAsync();
+
+
+
+public partial class Program { }
