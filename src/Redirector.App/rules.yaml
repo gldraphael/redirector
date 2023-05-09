@@ -1,3 +1,3 @@
 rules:
   - slug: gh
-    redirectTo: https://github.com
+    redirectTo: https://github.com/gldraphael/redirector
