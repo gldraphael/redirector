@@ -6,7 +6,7 @@ internal static class WebApplicationBuilderExtensions
     {
         builder.Configuration.Sources.Clear();
         builder.Configuration.AddJsonFile("./appsettings.json", optional: false);
-        builder.Configuration.AddJsonFile($"./appsettings.{builder.Environment.EnvironmentName}.json");
+        builder.Configuration.AddJsonFile($"./appsettings.{builder.Environment.EnvironmentName}.json", optional: true);
         builder.Configuration.AddEnvironmentVariables();
         var sources = builder.Configuration.GetSection("readRulesFrom").Get<RuleSources>();
         builder.Configuration.Sources.RemoveAt(2);
