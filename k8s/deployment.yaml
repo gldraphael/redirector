@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app.kubernetes.io/name: redirector
+    app.kubernetes.io/version: main
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: redirector
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: redirector
+        app.kubernetes.io/version: main
+    spec:
+      containers:
+      - name: redirector
+        image: ghcr.io/gldraphael/redirector:main
+        ports:
+        - name: http
+          containerPort: 8080
+        env:
+        - name: REDIRECTOR_RULES
+          value: /config/rules.yaml
+        volumeMounts:
+        - name: rules-config
+          mountPath: /config/rules.yaml
+          subPath: rules.yaml
+          readOnly: true
+      volumes:
+      - name: rules-config
+        configMap:
+          name: rules-config
