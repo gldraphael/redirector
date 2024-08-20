@@ -1,3 +1,5 @@
 rules:
-  - slug:   github
+  - slug:   maintainer
     target: https://github.com/gldraphael
+  - slug:   repo
+    target: https://github.com/gldraphael/redirector
