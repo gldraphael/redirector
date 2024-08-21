@@ -1,12 +1,12 @@
 # redirector
 
-`redirector` is a configuration-first bare bones URL shortener. 
+`redirector` is a config-only bare bones URL shortener. 
 
 It supports the following features:
 
 * Use configuration to set URL slugs to redirect to a target URL.
-* 30MB docker image.
-* Nothing else.
+* 30MB uncompressed docker image (13MB compressed).
+* No database, no analytics, no external dependencies.
 
 Redirection rules can be configured using a simple `rules.yaml` file:
 
